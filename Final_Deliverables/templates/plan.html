@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Pricing Table using HTML and CSS
+    </title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Select Your Plan</h2>
+        <div class="price-row">
+            <div class="price-col">
+                <p>Free user</p>
+                <h3>0 Rs <span>/month</span></h3>
+                <ul>
+                    <li>Can give only two queries per day</li>
+                    <li>Query resolve within 240 hours</li>
+                </ul>
+                <button>Purchase here</button>
+            </div>
+            <div class="price-col">
+                <p>Standard user</p>
+                <h3>399 Rs <span>/month</span></h3>
+                <ul>
+                    <li>Can give five quries per day</li>
+                    <li>Query reslove within 48 hours</li>
+                </ul>
+                <button>Purchase here</button>
+            </div>
+            <div class="price-col">
+                <p>Premium user</p>
+                <h3>999 Rs <span>/month</span></h3>
+                <ul>
+                    <li>Can give ten quries per day</li>
+                    <li>Query resolve within 5 hours</li>
+                </ul>
+                <button>Purchase here</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
