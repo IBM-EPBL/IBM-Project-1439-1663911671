@@ -1,0 +1,77 @@
+Docker desktop open
+account settings - > repository create [TMKS/name]
+----------------------------------------------------------------------------
+Creating an image :
+>>docker build -t TMKS/flask .
+----------------------------------------------------------------------------
+Creating a container
+>>docker run -d --name webpage -p 5000:5000 TMKS/flask
+----------------------------------------------------------------------------
+For testing in chrome: localhost:5000
+----------------------------------------------------------------------------
+For push into online
+>>docker push TMKS/flask:tagname
+----------------------------------------------------------------------------
+
+
+
+kubernetes:
+----------------------------------------------------------------------------
+From shyam repo like kunernetes folder create and 5 files should be added
+github link :  https://github.com/kshyam/flask-app-with-ibm-kubernetes-razorops/tree/main/kubernetes
+----------------------------------------------------------------------------
+go to docker desktop and go to setting and select kubernetes and start apply and save
+----------------------------------------------------------------------------
+Go to command prompt and type
+>>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
+>>kubectl proxy
+
+minimize the command prompt and go to chrome and search this url: [suppose error vanthuthuna ] proceed to step :
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
+--------------------
+STEP : --- 
+type the command in another (new ) command prompt :
+kubectl apply -f dashboard-adminuser.yaml
+
+after this check the 30 th line that is url
+-----------------------------
+
+
+-------------------------------------------------------------------------------
+Go to new command prompt and type to get token
+>>kubectl -n kubernetes-dashboard describe secret admin-user-token
+----------------------------------------------------------------------------
+and then copy the token and paste in the website and login in
+----------------------------------------------------------------------------
+After that go to folder and have to edit in the kubernetes files:
+No change in dashboard.yml
+only Change in file [flask deployment and ibm deployment] 
+flash-app-service ----> TMKS/flask
+change the container name too : like u have set
+after changing all the things: go to command prompt (dont go to running cmd) and type : 
+------------------------------------------------------------------------------
+>> kubectl -n kubernetes-dashboard apply -f kubernetes/flask_deployment.yaml
+
+after this type 
+
+>>kubectl -n kubernetes-dashboard scale deployment flask-app --replicas=3
+
+after this type 
+
+>>kubectl -n kubernetes-dashboard apply -f kubernetes/flask_service.yaml
+
+and type this 
+
+>>kubectl -n kubernetes-dashboard apply -f kubernetes/flask_ingress.yaml
+
+and type this 
+
+>>kubectl -n kubernetes-dashboard get ing
+
+80 port it will show as port
+
+after that go to chrome and search  
+localhost:80
+
+kubectl -n kubernetes-dashboard get service
+

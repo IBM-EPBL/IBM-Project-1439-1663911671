@@ -1,0 +1,34 @@
+Online pushing
+---------------------------------------------------------
+Go to link cloud.ibm.com
+search for container registry
+get started
+---------------------------------------------------------
+go to command prompt: 
+ibmcloud login
+email id  : smartintern (webportal)
+password  : password (webportal)
+
+type in the command prompt:
+------------------------------------------------------
+>>ibmcloud plugin install container-service
+>>ibmcloud plugin install container-registry
+>>ibmcloud plugin install observe-service
+>>ibmcloud plugin install observe-service
+>>ibmcloud plugin list
+>>ibmcloud plugin install container-registry 
+>>ibmcloud login -a https://cloud.ibm.com
+set region 4 th option japan
+
+type this cmd
+
+>>ibmcloud cr namespace-add <my_namespace>
+>>ibmcloud cr login
+>>docker tag TMKS/flask jp.icr.io/<my_namespace>/<my_repo>
+
+------------------------------------------------------------------------
+and then go to search and find kubernetes services
+change standard to free
+-- create
+
+and continue similiar like a kubernetes in local push document
