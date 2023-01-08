@@ -1,0 +1,44 @@
+
+
+
+
+
+
+                                     : IDOR :
+
+
+    Description:
+          Hai Team,
+              I found a IDOR on https://dorahacks.io website. It's leads to attacker can invite any members using any users organizations.
+   
+   Proof-Of-Concept:
+     1. Create 2 accounts  (C,B C=attacker B=victim)
+     2. A attacker can get the victim user-token via the cookie
+     3. Now attacker can easily identify the victim organization id using burute fore method.
+     4. A attacker can invite any members to the organizaton without the permission of the owner.
+
+  Impact:
+    1. IDOR
+  
+  POC:
+    I am attached poc video on github folder 
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+ 
